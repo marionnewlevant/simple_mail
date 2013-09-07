@@ -1,1 +1,66 @@
-github index page for simple_mail
+---
+layout: default
+title: Github (simple_mail) | Marion Newlevant
+---
+
+{%capture layout_primary%}
+  <h1>Simple_mail</h1>
+<p>
+  E-mail sending plugin. In the usual way, we have a form which
+  posts back to the same page, so the first thing is to check whether
+  the form has been filled in and is valid. If so, send the e-mail, and display the
+  confirmation. If not, display the form (including any validation errors).
+</p>
+<h2>Example</h2>
+<pre class="brush: ee;">
+{exp:simple_mail:send recipient="recipient@sample.com"}
+
+{if "{exp:simple_mail:sent}"}
+  &lt;p&gt;Thank You&lt;/p&gt;
+{if:else}
+  &lt;div class="error"&gt;{exp:simple_mail:validation_errors}&lt;/div&gt;
+  &lt;form method="post"&gt;
+    &lt;input type="email" name="email" value="" id="email"  /&gt;
+    &lt;select name="subject" id="subject"&gt;
+      &lt;option value="just hi"&gt;just hi&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;textarea name="message" id="message"&gt;&lt;/textarea&gt;&lt;br/&gt;&lt;br/&gt;
+    &lt;input type="submit" value="submit"/&gt;
+  &lt;/form&gt;
+{/if}
+</pre>
+       
+<h2>Details</h2>
+<p>The form action should post back to the same page. Form fields are:</p>
+<ul>
+  <li><code>email</code> - sender&rsquo;s e-mail address</li>
+  <li><code>subject</code> - subject of the e-mail</li>
+  <li><code>message</code> - content of the e-mail message</li>
+</ul>
+
+<p>Tags:</p>
+<dl>
+  <dt><code>exp:simple_mail:send</code> - parameter: <code>recipient</code></dt>
+  <dd>at top of page: will send the e-mail if the form is filled in.</dd>
+  <dt><code>exp:simple_mail:sent</code></dt>
+  <dd>was the mail sent? boolean</dd>
+  <dt><code>exp:simple_mail:validation_errors</code></dt>
+  <dd>possibly empty list of <code>&lt;p&gt;</code> formatted form errors</dd>
+</dl>
+{% endcapture %}
+{%capture layout_secondary%}
+  <h1>Notes</h1>
+  <p>
+    I wrote this plugin so that I could send e-mail from a form
+    in EE sites that use the Core license (which doesn&rsquo;t include
+    the e-mail module). It is a fairly thin layer on top of CodeIgniter
+    email.
+  </p>
+  <p>Limitations:</p>
+  <ul>
+    <li>Error handling is pretty much non-existant</li>
+    <li>Form validation errors are not very granular</li>
+    <li>User documentation is minimal</li>
+  </ul>
+{% endcapture %}
+{%include layout.html%}

@@ -1,0 +1,7 @@
+name: Github | Marion Newlevant
+markdown: redcarpet
+pygments: true
+
+# I would LIKE to have source in _source, but github doesn't seem to work with that...
+exclude: [LICENSE, README.md]
+repo: simple_mail

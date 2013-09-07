@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width">
+
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/style-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/style.css">
+  <!--<![endif]-->
+  <link type="text/css" rel="stylesheet" href="/js/lib/syntaxhighlighter_3.0.83/styles/shCore.css"/>
+  
+</head>
+<body class="github">
+  <header role="banner">
+    <a href="http://marion.newlevant.com">
+      <h1>Marion Newlevant: Web Developer</h1>
+    </a>
+    <p>A software craftswoman in Portland, Oregon with a thing for clean code...</p>
+  </header>
+  <nav role="navigation">
+    <a href="#nav" class="nav-collapse" id="nav-collapse"><i class="icon-menu"></i> Menu</a>
+    <ul class="nav" id="nav">
+      <li class="portfolio">
+        <a href="http://marion.newlevant.com/portfolio/patternagents">portfolio</a>
+      </li>
+      <li class="testimonials">
+        <a href="http://marion.newlevant.com/testimonials">testimonials</a> 
+      </li>
+      <li class="blog">
+        <a href="http://marion.newlevant.com/blog">blog</a>
+      </li>
+      <li class="contact">
+        <a href="http://marion.newlevant.com/contact">contact</a>
+      </li>
+      <li class="github">
+        <a href="/">github</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="buttons">
+    <a href="https://github.com/marionnewlevant/{{site.repo}}"><i class="icon-github-circled"></i> fork on github</a>
+    <a href="https://github.com/marionnewlevant/{{site.repo}}/zipball/master"><i class="icon-download"></i> download .zip</a>
+    <a href="https://github.com/marionnewlevant/{{site.repo}}/tarball/master"><i class="icon-download"></i> download .tgz</a>
+  </div>
+  {{ content }}
+  <footer role="contentinfo">
+    <ul>
+      <li>Credit where credit is due:</li>
+      <li><a href="http://fontello.com/">fontello icon font</a></li>
+      <li><a href="http://jekyllrb.com/">jekyll static site generator</a></li>
+      <li><a href="http://pages.github.com/">github pages</a></li>
+      <li>&copy; 2013, all rights reserved</li>
+    </ul>
+  </footer>
+<!-- Javascript at the bottom for fast page loading -->
+<script type="text/javascript" src="/js/nav.js"></script>
+<script type="text/javascript" src="/js/lib/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+<script type="text/javascript" src="/js/lib/syntaxhighlighter_3.0.83/scripts/shBrushEE.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>
